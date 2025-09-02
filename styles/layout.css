@@ -17,14 +17,8 @@
 .sidebar-footer { margin-top: auto; padding: 12px 8px; }
 .muted-link { color: var(--muted); text-decoration: none; }
 
-/* Header */
+/* Header - now using Tailwind classes in component */
 .content-area { display: grid; grid-template-rows: auto 1fr; min-width: 0; }
-.app-header { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 20px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 1; }
-.page-title { margin: 0; font-size: 18px; }
-.header-actions { display: flex; align-items: center; gap: 10px; }
-.ghost-action { color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
-.ghost-action:hover { background: var(--surface); color: var(--text); }
-.cart-button { text-decoration: none; border: 1px solid var(--border); padding: 8px 12px; border-radius: 8px; color: var(--text); }
 
 /* Page area */
 .page-content { padding: 24px; background: var(--surface); min-height: calc(100vh - 64px); }
