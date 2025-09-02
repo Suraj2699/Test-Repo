@@ -14,7 +14,7 @@ export default function AccountPage() {
       <h2 className="section-title">My Account</h2>
       <p className="section-caption">User Profile</p>
 
-      <div className="form-grid">
+      <div className="form-grid single-column">
         <div className="input-group full-row">
           <label className="input-label">Profile image</label>
           <input id="avatar" className="file-input-hidden" type="file" accept="image/*" />
