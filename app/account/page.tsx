@@ -12,11 +12,13 @@ export default function AccountPage() {
   return (
     <div className="account-container">
       <h2 className="section-title">My Account</h2>
+      <p className="section-caption">User Profile</p>
 
       <div className="form-grid">
         <div className="input-group full-row">
           <label className="input-label">Profile image</label>
-          <input className="file-input" type="file" accept="image/*" />
+          <input id="avatar" className="file-input-hidden" type="file" accept="image/*" />
+          <label htmlFor="avatar" className="text-link">Upload/Change Image</label>
         </div>
 
         <div className="input-group">
@@ -56,6 +58,7 @@ export default function AccountPage() {
 
       <div className="danger-zone">
         <h3 className="danger-title">Danger Zone</h3>
+        <p className="input-label">Delete Account</p>
         <button className="danger-button" type="button">Delete Account</button>
       </div>
     </div>
