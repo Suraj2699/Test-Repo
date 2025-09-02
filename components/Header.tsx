@@ -67,7 +67,7 @@ const HeaderComponent: React.FC = () => {
                 <div className="flex items-center gap-3">
                     <button
                         type="button"
-                        className="inline-flex h-11 w-11 items-center justify-content rounded-md border border-gray-300 md:hidden"
+                        className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-gray-300 md:hidden"
                         aria-label="Open menu"
                         aria-expanded={mobileOpen}
                         onClick={() => setMobileOpen((s) => !s)}
