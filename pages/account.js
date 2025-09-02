@@ -12,7 +12,7 @@ export default function AccountPage() {
       <h2 className="section-title">My Account</h2>
 
       <div className="form-grid">
-        <div className="input-group" style={{ gridColumn: "1 / -1" }}>
+        <div className="input-group full-row">
           <label className="input-label">Profile image</label>
           <input className="file-input" type="file" accept="image/*" />
         </div>
@@ -35,7 +35,7 @@ export default function AccountPage() {
           <input id="phone" className="text-input" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="" />
         </div>
 
-        <div className="input-group" style={{ gridColumn: "1 / -1" }}>
+        <div className="input-group full-row">
           <label className="input-label">Email notification?</label>
           <div className="switch-row">
             <button
