@@ -13,6 +13,7 @@ module.exports = {
         secondary: "#6b7280",
         muted: "#6b7280",
         text: "#1f2937",
+        foreground: "#1f2937",
       }
     },
   },
