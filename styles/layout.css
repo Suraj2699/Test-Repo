@@ -56,7 +56,6 @@
 .switch.is-on::after { left: 24px; }
 .danger-zone { margin-top: 24px; border-top: 1px solid var(--border); padding-top: 16px; }
 .danger-title { margin: 0 0 12px; color: #dc2626; font-size: 14px; }
-.danger-button { border: 1px solid #fecaca; color: #b91c1c; background: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; display: inline-block; }
 
 /* Responsive */
 @media (min-width: 900px) {
