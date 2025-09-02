@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, type ChangeEvent } from "react";
+import Button from "../../components/ui/Button";
 
 export default function AccountPage() {
   const [firstName, setFirstName] = useState("sung");
@@ -81,7 +82,9 @@ export default function AccountPage() {
         <h3 className="danger-title">Danger Zone</h3>
         <section className="panel">
           <p className="input-label">Delete Account</p>
-          <button className="danger-button" type="button">Delete Account</button>
+          <Button variant="outline" size="md" className="border-red-300 text-red-600 hover:bg-red-50">
+            Delete Account
+          </Button>
         </section>
       </div>
     </div>
