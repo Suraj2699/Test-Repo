@@ -14,7 +14,7 @@ export default function AccountPage() {
     return () => { if (avatarUrl) URL.revokeObjectURL(avatarUrl); };
   }, [avatarUrl]);
 
-  const onAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onAvatarChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
