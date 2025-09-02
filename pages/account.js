@@ -48,6 +48,19 @@ export default function AccountPage() {
             <span>{emailNotif ? "On" : "Off"}</span>
           </div>
         </div>
+
+        <div className="input-group full-row">
+          <label className="input-label">Text notifications?</label>
+          <div className="switch-row">
+            <button
+              type="button"
+              aria-pressed={textNotif}
+              className={"switch" + (textNotif ? " is-on" : "")}
+              onClick={() => setTextNotif((v) => !v)}
+            />
+            <span>{textNotif ? "On" : "Off"}</span>
+          </div>
+        </div>
       </div>
 
       <div className="danger-zone">
