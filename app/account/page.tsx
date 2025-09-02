@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function AccountPage() {
   const [firstName, setFirstName] = useState("sung");
@@ -8,6 +8,20 @@ export default function AccountPage() {
   const [phone, setPhone] = useState("");
   const [emailNotif, setEmailNotif] = useState(true);
   const [textNotif, setTextNotif] = useState(true);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => { if (avatarUrl) URL.revokeObjectURL(avatarUrl); };
+  }, [avatarUrl]);
+
+  const onAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      if (avatarUrl) URL.revokeObjectURL(avatarUrl);
+      setAvatarUrl(url);
+    }
+  };
 
   return (
     <div className="account-container">
@@ -16,9 +30,18 @@ export default function AccountPage() {
 
       <div className="form-grid single-column">
         <div className="input-group full-row">
-          <label className="input-label">Profile image</label>
-          <input id="avatar" className="file-input-hidden" type="file" accept="image/*" />
-          <label htmlFor="avatar" className="text-link">Upload/Change Image</label>
+          <label className="input-label" htmlFor="avatar">Profile image</label>
+          <input id="avatar" className="file-input-hidden" type="file" accept="image/*" onChange={onAvatarChange} />
+          <label htmlFor="avatar" className="uploader-box" aria-label="Upload Profile Image">
+            {avatarUrl ? (
+              <img src={avatarUrl} alt="Profile preview" className="uploader-image" />
+            ) : (
+              <div className="uploader-placeholder">
+                <span>Upload Profile Image</span>
+                <span className="uploader-underline" />
+              </div>
+            )}
+          </label>
         </div>
 
         <div className="input-group">
