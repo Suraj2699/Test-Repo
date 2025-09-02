@@ -36,10 +36,7 @@ export default function AccountPage() {
             {avatarUrl ? (
               <img src={avatarUrl} alt="Profile preview" className="uploader-image" />
             ) : (
-              <div className="uploader-placeholder">
-                <span>Upload Profile Image</span>
-                <span className="uploader-underline" />
-              </div>
+              <span className="uploader-empty" aria-hidden="true" />
             )}
           </label>
         </div>
