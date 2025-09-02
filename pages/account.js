@@ -6,6 +6,7 @@ export default function AccountPage() {
   const [email, setEmail] = useState("sunnyu391@gmail.com");
   const [phone, setPhone] = useState("");
   const [emailNotif, setEmailNotif] = useState(true);
+  const [textNotif, setTextNotif] = useState(true);
 
   return (
     <div className="account-container">
