@@ -26,10 +26,9 @@ export default function AccountPage() {
   return (
     <div className="account-outer">
       <div className="account-card">
+        <h2 className="section-title">My Account</h2>
+        <p className="section-caption">User Profile</p>
         <section className="panel">
-          <h2 className="section-title">My Account</h2>
-          <p className="section-caption">User Profile</p>
-
           <div className="form-grid single-column">
             <div className="input-group full-row">
               <label className="input-label" htmlFor="avatar">Profile image</label>
@@ -79,8 +78,8 @@ export default function AccountPage() {
           </div>
         </section>
 
+        <h3 className="danger-title">Danger Zone</h3>
         <section className="panel">
-          <h3 className="danger-title">Danger Zone</h3>
           <p className="input-label">Delete Account</p>
           <button className="danger-button" type="button">Delete Account</button>
         </section>
