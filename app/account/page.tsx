@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 
 export default function AccountPage() {
   const [firstName, setFirstName] = useState("sung");
