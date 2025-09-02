@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, type ChangeEvent } from "react";
 import Button from "../../components/ui/Button";
+import Heading from "../../components/ui/Heading";
 
 export default function AccountPage() {
   const [firstName, setFirstName] = useState("sung");
@@ -27,7 +28,9 @@ export default function AccountPage() {
   return (
     <div className="account-outer">
       <div className="account-card">
-        <h2 className="section-title">My Account</h2>
+        <Heading variant="h2" align="left" weight="semibold" scale="compact">
+          My Account
+        </Heading>
         <p className="section-caption">User Profile</p>
         <section className="panel">
           <div className="form-grid single-column">
@@ -79,7 +82,9 @@ export default function AccountPage() {
           </div>
         </section>
 
-        <h3 className="danger-title">Danger Zone</h3>
+        <Heading variant="h3" align="left" weight="semibold" scale="compact" className="text-red-600">
+          Danger Zone
+        </Heading>
         <section className="panel">
           <p className="input-label">Delete Account</p>
           <Button variant="outline" size="md" className="border-red-300 text-red-600 hover:bg-red-50">
