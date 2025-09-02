@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback, memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import Button from "./ui/Button";
 
 const cx = (...s: Array<string | false | null | undefined>) =>
     s.filter(Boolean).join(" ");
@@ -105,15 +106,16 @@ const HeaderComponent: React.FC = () => {
                     {/* Logged out (desktop) */}
                     {!isDashboard && !isAuthed && (
                         <div className="hidden items-center gap-6 md:flex">
-                            <button 
-                                className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                            <Button
+                                variant="secondary"
+                                size="md"
                                 onClick={() => router.push("/login")}
                             >
                                 Sign in
-                            </button>
-                            <button
-                                type="button"
-                                className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                            </Button>
+                            <Button
+                                variant="outline"
+                                size="md"
                                 aria-label="Open cart"
                                 onClick={() => router.push("/checkout")}
                             >
@@ -121,16 +123,16 @@ const HeaderComponent: React.FC = () => {
                                 <span className="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1 text-[12px] font-semibold leading-none text-white">
                                     0
                                 </span>
-                            </button>
+                            </Button>
                         </div>
                     )}
 
                     {/* Logged in (desktop): Cart + avatar */}
                     {isAuthed && (
                         <>
-                            <button
-                                type="button"
-                                className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                            <Button
+                                variant="outline"
+                                size="md"
                                 aria-label="Open cart"
                                 onClick={() => router.push("/checkout")}
                             >
@@ -138,7 +140,7 @@ const HeaderComponent: React.FC = () => {
                                 <span className="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1 text-[12px] font-semibold leading-none text-white">
                                     0
                                 </span>
-                            </button>
+                            </Button>
 
                             <div className="hidden items-center md:flex">
                                 <div className="relative">
@@ -176,12 +178,14 @@ const HeaderComponent: React.FC = () => {
                                                 <li className="my-1 h-px bg-gray-200" />
 
                                                 <li className="px-2 py-1">
-                                                    <button
-                                                        className="w-full px-4 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-50"
+                                                    <Button
+                                                        variant="outline"
+                                                        size="sm"
+                                                        fullWidth
                                                         onClick={handleSignOut}
                                                     >
                                                         Sign out
-                                                    </button>
+                                                    </Button>
                                                 </li>
                                             </ul>
                                         </div>
@@ -242,21 +246,23 @@ const HeaderComponent: React.FC = () => {
                                         </Link>
                                     ))}
 
-                                    <button
-                                        type="button"
-                                        className="mt-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                                    <Button
+                                        variant="outline"
+                                        size="md"
+                                        className="mt-2"
                                         onClick={() => {
                                             setMobileOpen(false);
                                             handleSignOut();
                                         }}
                                     >
                                         Sign out
-                                    </button>
+                                    </Button>
 
-                                    <button
-                                        type="button"
-                                        className="mt-2 flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                                    <Button
+                                        variant="outline"
+                                        size="md"
                                         aria-label="Open cart"
+                                        className="mt-2"
                                         onClick={() => {
                                             setMobileOpen(false);
                                             router.push("/checkout");
@@ -266,18 +272,20 @@ const HeaderComponent: React.FC = () => {
                                         <span className="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1 text-[12px] font-semibold leading-none text-white">
                                             0
                                         </span>
-                                    </button>
+                                    </Button>
                                 </>
                             ) : (
-                                <button
-                                    className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+                                <Button
+                                    variant="primary"
+                                    size="md"
+                                    className="mt-3"
                                     onClick={() => {
                                         setMobileOpen(false);
                                         router.push("/login");
                                     }}
                                 >
                                     Sign in
-                                </button>
+                                </Button>
                             )}
                         </nav>
                     </aside>
