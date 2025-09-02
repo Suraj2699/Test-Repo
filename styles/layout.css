@@ -32,7 +32,7 @@
 /* Account layout wrappers */
 .account-outer { padding: 24px; background: #FAFAFA; }
 .account-card { background: #FFFFFF; padding: 40px; box-shadow: 0 2px 16px 0 #000000; }
-.panel { background: #F5F5F5; padding: 24px; margin-bottom: 24px; }
+.panel { background: #F5F5F5; padding: 24px; margin-bottom: 24px; border-radius: 10px; }
 
 /* Account page */
 .account-container { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
